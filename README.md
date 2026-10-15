@@ -9,7 +9,8 @@ post-processing in Type4Me's row.
 magpie plugin add @magpie-community/agent-type4me
 ```
 
-Until it is on npm, install it from GitHub:
+magpie 0.1.1243 and later installs it from the community repository's `dist`
+branch until it is on npm. On an older magpie, install it from GitHub:
 
 ```sh
 magpie plugin add github:kchen0x/magpie-agent-type4me

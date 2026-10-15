@@ -8,7 +8,7 @@
 magpie plugin add @magpie-community/agent-type4me
 ```
 
-npm 包发布之前，可以从 GitHub 安装：
+npm 包发布之前，Magpie 0.1.1243 及以后的版本会从社区仓库的 `dist` 分支安装。更早的 Magpie 可以从 GitHub 安装：
 
 ```bash
 magpie plugin add github:kchen0x/magpie-agent-type4me
