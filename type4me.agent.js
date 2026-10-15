@@ -10,8 +10,8 @@
 export const agent = {
   id: "type4me",
   name: "Type4Me",
-  // Type4Me's own icon, on the Agents page and the plugin's row; an SVG
-  // that follows light and dark mode itself, since magpie draws it as is
+  // Type4Me's own icon, on the Agents page and the plugin's row: the mark on
+  // its own white tile, since magpie draws it as is in both light and dark
   icon: "https://raw.githubusercontent.com/kchen0x/magpie-agent-type4me/main/assets/icon.svg",
   // must match MagpieAgentFile.defaultURL in Type4Me
   config: "~/Library/Application Support/Type4Me/magpie-agent.json",
