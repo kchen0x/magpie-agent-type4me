@@ -8,5 +8,5 @@
   "license": "MIT",
   "repository": { "type": "git", "url": "git+https://github.com/magpie-community/plugins.git", "directory": "packages/type4me" },
   "homepage": "https://github.com/kchen0x/magpie-agent-type4me",
-  "magpie": { "agent": "./type4me.agent.js", "icon": "https://raw.githubusercontent.com/kchen0x/magpie-agent-type4me/main/assets/icon.png" }
+  "magpie": { "agent": "./type4me.agent.js", "icon": "https://raw.githubusercontent.com/kchen0x/magpie-agent-type4me/main/assets/icon.svg" }
 }

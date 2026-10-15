@@ -42,7 +42,7 @@ Magpie 只改一个文件：`~/Library/Application Support/Type4Me/magpie-agent.
 
 ## 开发
 
-源码维护在本仓库，并复制到 [magpie-community/plugins](https://github.com/magpie-community/plugins) 的 `packages/type4me`。按社区规范，`type4me.agent.js` 是单文件、不导入任何模块；图标通过 https 地址引用本仓库的 `assets/icon.png`。
+源码维护在本仓库，并复制到 [magpie-community/plugins](https://github.com/magpie-community/plugins) 的 `packages/type4me`。按社区规范，`type4me.agent.js` 是单文件、不导入任何模块；图标通过 https 地址引用本仓库的 `assets/icon.svg`。
 
 ```bash
 bun test                                # 检查 connect 的返回值

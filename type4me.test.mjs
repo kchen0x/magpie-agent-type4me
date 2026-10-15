@@ -15,7 +15,7 @@ test("says where Type4Me keeps its model", () => {
 
 test("shows Type4Me's own icon, as the package gives it", async () => {
   const pkg = await Bun.file(new URL("./package.json", import.meta.url)).json()
-  expect(agent.icon).toBe("https://raw.githubusercontent.com/kchen0x/magpie-agent-type4me/main/assets/icon.png")
+  expect(agent.icon).toBe("https://raw.githubusercontent.com/kchen0x/magpie-agent-type4me/main/assets/icon.svg")
   expect(pkg.magpie.icon).toBe(agent.icon)
 })
 
