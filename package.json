@@ -1,0 +1,17 @@
+{
+  "name": "@magpie-community/agent-type4me",
+  "version": "0.1.0",
+  "description": "Type4Me (macOS voice input) as a magpie agent: pick the model Type4Me's LLM post-processing uses from magpie.",
+  "type": "module",
+  "license": "MIT",
+  "keywords": ["magpie", "magpie-agent", "type4me"],
+  "homepage": "https://github.com/joewongjc/type4me",
+  "files": ["type4me.agent.js", "icon.js"],
+  "magpie": {
+    "agent": "./type4me.agent.js"
+  },
+  "scripts": {
+    "icon": "bun scripts/gen-icon.mjs",
+    "test": "bun test"
+  }
+}
