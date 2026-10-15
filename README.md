@@ -1,57 +1,57 @@
-# agent-type4me
+# @magpie-community/agent-type4me
 
-[Type4Me](https://github.com/joewongjc/type4me) as a [magpie](https://github.com/yetone/magpie) agent. Pick the model Type4Me's LLM post-processing uses from magpie's Agents page or menu bar, next to your other agents.
+[Type4Me](https://github.com/joewongjc/type4me), a macOS voice input app, as a
+magpie agent. With this plugin Type4Me is on magpie's Agents page like the
+agents magpie ships with: pick one of magpie's models for its LLM
+post-processing in Type4Me's row.
 
-中文说明见 [README.zh-CN.md](README.zh-CN.md)。
-
-## Install
-
-```bash
+```sh
 magpie plugin add @magpie-community/agent-type4me
 ```
 
-Until the npm package is out, install it from GitHub:
+Until it is on npm, install it from GitHub:
 
-```bash
+```sh
 magpie plugin add github:kchen0x/magpie-agent-type4me
 ```
 
-Then pick a model for Type4Me on magpie's Agents page, or:
-
-```bash
-magpie type4me magpie/deepseek/deepseek-chat
-```
-
-In Type4Me, open Settings › Models, choose **Magpie (Local Gateway)** and set it as the default. Type4Me uses the new model on your next dictation; no restart.
-
-## What it writes
-
-magpie edits one file, `~/Library/Application Support/Type4Me/magpie-agent.json`:
+Then pick one of magpie's models in Type4Me's row, or
+`magpie type4me magpie/deepseek/deepseek-flash`. magpie writes into
+`~/Library/Application Support/Type4Me/magpie-agent.json`:
 
 ```json
 {
-  "model": "deepseek/deepseek-chat",
+  "model": "deepseek/deepseek-flash",
   "baseURL": "http://127.0.0.1:3425/v1",
-  "apiKey": "<this agent's magpie key>"
+  "apiKey": "magpie-…"
 }
 ```
 
-- Type4Me and Type4Me Dev share this folder, so one plugin covers both.
-- Type4Me may change `model` itself; it never changes `baseURL` or `apiKey`.
-- `magpie type4me default` removes the three keys, and Type4Me goes back to talking to magpie directly with the model you picked in Type4Me.
+In Type4Me, choose **Magpie (Local Gateway)** under Settings › Models and set
+it as the default. Type4Me reads the file before each dictation, so a new model
+takes effect on the next one, with no restart.
 
-Type4Me works with magpie without this plugin too: it lists magpie's models and sends requests itself. The plugin adds Type4Me to magpie's Agents page, menu bar and profiles.
+- Type4Me and Type4Me Dev share that folder: one plugin covers both.
+- Picking a model in Type4Me's own settings changes it in magpie too (Type4Me
+  runs `magpie type4me magpie/<model>`). Type4Me never changes `baseURL` or
+  `apiKey`.
+- Switching Type4Me off in magpie removes the three keys; Type4Me then talks to
+  magpie directly, with the model picked in Type4Me.
+
+Type4Me works with magpie without this plugin too, listing magpie's models
+itself. The plugin adds Type4Me to magpie's Agents page, menu bar and profiles.
+
+How agent plugins work: [usemagpie.ai/docs/plugins#agents](https://usemagpie.ai/docs/plugins#agents).
 
 ## Develop
 
-```bash
-bun test                    # the agent's checks
-bun scripts/gen-icon.mjs    # after changing assets/icon.png
-magpie plugin add ./type4me.agent.js   # try it against your own magpie
+The source lives at [kchen0x/magpie-agent-type4me](https://github.com/kchen0x/magpie-agent-type4me)
+and is copied to `packages/type4me` in
+[magpie-community/plugins](https://github.com/magpie-community/plugins).
+
+```sh
+bun test                                # what connect returns
+magpie plugin add ./type4me.agent.js    # try it on your own magpie
 ```
 
-`CONFIG_PATH` must match `MagpieAgentFile.defaultURL` in Type4Me.
-
-## License
-
-MIT
+`agent.config` must match `MagpieAgentFile.defaultURL` in Type4Me.
